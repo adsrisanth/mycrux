@@ -117,7 +117,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-medium text-gray-200">Email</h3>
-                    <p className="text-gray-400">admin@mycrux.com</p>
+                    <a 
+                      href="mailto:admin@mycrux.com" 
+                      className="text-gray-400 hover:text-gray-200 transition-colors duration-300 cursor-pointer"
+                    >
+                      admin@mycrux.com
+                    </a>
                   </div>
                 </div>
                 {/* Social Links */}
