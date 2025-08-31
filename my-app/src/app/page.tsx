@@ -1,27 +1,67 @@
 import Image from "next/image";
+import Navigation from '@/app/components/Navigation';
+import Footer from '@/app/components/Footer';
 import Logo from './assets/logo.png'
 
 const Home = () => {
   return (
-    <div className="fixed w-full h-full bg-slate-950">
-      <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] bg-black z-0"></div>
-      <div className="bg-black relative z-10">
-        <div className='text-gray-300 text-[10px] flex place-content-end px-2 py-1 border-b-[0.1px] border-gray-50'>
-          <span className='cursor-pointer border-r border-gray-50 hover:text-gray-50 hover:duration-300 pr-2'>Exclusive Membership</span>
-          <span className='cursor-pointer hover:duration-500 pl-2 hover:text-gray-50'>SignIN</span>
-        </div>
-        {/* <div className="bg-black py-2 px-3 border-b border-gray-50">
-          <Image src={Logo} alt="Logo" className="w-10 h-10" />
-        </div> */}
+    <div className="h-screen bg-black relative overflow-hidden">
+      {/* Animated background grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f1a_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f1a_1px,transparent_1px)] bg-[size:20px_20px] animate-pulse"></div>
+      
+      {/* Floating particles effect */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-gray-400 rounded-full animate-ping opacity-20"></div>
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-gray-400 rounded-full animate-ping opacity-20" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-gray-400 rounded-full animate-ping opacity-20" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-gray-400 rounded-full animate-ping opacity-20" style={{animationDelay: '3s'}}></div>
       </div>
-      <div className="flex h-full w-full items-center justify-center text-gray-50 relative z-10 flex-col">
-        <div>
-          <Image src={Logo} alt="Logo" className="w-14 h-14" />
+
+      <Navigation currentPage="home" />
+
+      {/* Main content */}
+      <main className="relative z-10 flex flex-col items-center justify-center h-[calc(100vh-140px)] px-4 sm:px-6 lg:px-8">
+        <div className="text-center space-y-8 max-w-2xl mx-auto">
+          {/* Logo with glow effect */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-400 rounded-full blur-xl opacity-20 animate-pulse"></div>
+            <Image 
+              src={Logo} 
+              alt="Logo" 
+              className="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto drop-shadow-2xl animate-float" 
+            />
+          </div>
+
+          {/* Main heading with gradient text */}
+          <div className="space-y-4">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
+              <span className="bg-gradient-to-r from-gray-100 via-gray-300 to-gray-100 bg-clip-text text-transparent">
+                Coming Soon
+              </span>
+            </h1>
+            <div className="w-24 h-1 bg-gradient-to-r from-gray-600 to-gray-400 mx-auto rounded-full"></div>
+          </div>
+
+          {/* Subtitle */}
+          <p className="text-gray-400 text-lg sm:text-xl max-w-md mx-auto leading-relaxed">
+            Something extraordinary is brewing. Stay tuned for the unveiling.
+          </p>
+
+          {/* Animated dots */}
+          <div className="flex justify-center space-x-2">
+            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+          </div>
         </div>
-        <div>
-          <h1 className="text-3xl font-bold">Coming Soon...</h1>
+
+        {/* Bottom decorative element */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="w-32 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
         </div>
-      </div>
+      </main>
+
+      <Footer currentPage="home" />
     </div>
   );
 };
