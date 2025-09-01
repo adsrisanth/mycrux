@@ -151,14 +151,26 @@ const Waitlist = () => {
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-black mb-2">Basic</h3>
                   <div className="text-4xl font-bold text-black mb-2">FREE</div>
-                  <p className="text-gray-600">Available anytime (Worth ₹300)</p>
+                  <p className="text-gray-600">All basic plans</p>
                 </div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center space-x-3">
                     <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-gray-700">All basic plans</span>
+                    <span className="text-gray-700">Standard delivery (7-10 days)</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-700">Basic discounts</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-700">Quality checkings</span>
                   </li>
                 </ul>
                 <button className="w-full bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors">
@@ -173,10 +185,16 @@ const Waitlist = () => {
                 </div>
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-black mb-2">Pro</h3>
-                  <div className="text-4xl font-bold text-black mb-2">₹199/m</div>
-                  <p className="text-gray-600">After waitlist people</p>
+                  <div className="text-4xl font-bold text-black mb-2">FREE</div>
+                  <p className="text-gray-600">For waitlisted people (6 months)</p>
                 </div>
                 <ul className="space-y-3 mb-8">
+                  <li className="flex items-center space-x-3">
+                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-700">Standard delivery</span>
+                  </li>
                   <li className="flex items-center space-x-3">
                     <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -205,8 +223,8 @@ const Waitlist = () => {
               <div className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-black mb-2">Advanced</h3>
-                  <div className="text-4xl font-bold text-black mb-2">₹699/m</div>
-                  <p className="text-gray-600">After waitlist people</p>
+                  <div className="text-4xl font-bold text-black mb-2">50% OFF</div>
+                  <p className="text-gray-600">For waitlisted people (6 months)</p>
                 </div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center space-x-3">
@@ -232,6 +250,12 @@ const Waitlist = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-gray-700">Exclusive product launches</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-700">Express delivery - no extra fee</span>
                   </li>
                 </ul>
                 <button className="w-full bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors">
@@ -264,12 +288,10 @@ const Waitlist = () => {
             
             <div className="text-center">
               <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                </svg>
+                <span className="text-white text-2xl font-bold">₹</span>
               </div>
               <h3 className="text-xl font-bold text-black mb-3">Special Pricing</h3>
-              <p className="text-gray-600">Get exclusive discounts up to ₹1000 off and special pricing for waitlist members.</p>
+              <p className="text-gray-600">Get exclusive discounts up to ₹1000 off and special rupee pricing for waitlist members.</p>
             </div>
             
             <div className="text-center">

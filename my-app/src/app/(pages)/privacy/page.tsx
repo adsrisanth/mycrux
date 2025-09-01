@@ -4,102 +4,503 @@ import Link from "next/link";
 
 const Privacy = () => {
   return (
-    <div className="h-screen bg-white relative overflow-hidden">
-      {/* Animated background grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000001a_1px,transparent_1px),linear-gradient(to_bottom,#0000001a_1px,transparent_1px)] bg-[size:20px_20px] animate-pulse"></div>
-      
-      {/* Floating particles effect */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-black rounded-full animate-ping opacity-20"></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-black rounded-full animate-ping opacity-20" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-black rounded-full animate-ping opacity-20" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-black rounded-full animate-ping opacity-20" style={{animationDelay: '3s'}}></div>
-      </div>
-
+    <div className="bg-white">
       <Navigation currentPage="privacy" />
-
-      {/* Main content */}
-      <main className="relative z-10 flex flex-col h-[calc(100vh-140px)] px-4 sm:px-6 lg:px-8 overflow-y-auto">
-        <div className="max-w-4xl mx-auto py-8">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-              <span className="bg-gradient-to-r from-black via-gray-600 to-black bg-clip-text text-transparent">
+      <main className="pt-20">
+        {/* Hero Section - Nike Style */}
+        <div className="relative bg-black text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+            <div className="text-center">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
                 Privacy Policy
-              </span>
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-black to-gray-600 mx-auto rounded-full mb-6"></div>
-            {/* <p className="text-gray-400 text-lg">Last updated: December 2024</p> */}
+              <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Your privacy matters to us. Learn how we protect and handle your personal information.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 text-sm">
+                <div className="bg-white text-black px-4 py-2 rounded-full">GDPR Compliant</div>
+                <div className="bg-white text-black px-4 py-2 rounded-full">Secure Data</div>
+                <div className="bg-white text-black px-4 py-2 rounded-full">Transparent</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Content Section - Amazon Style */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+            {/* Sidebar Navigation - Amazon Style */}
+            <div className="lg:col-span-1">
+              <div className="sticky top-24">
+                <h3 className="text-lg font-semibold text-black mb-4">Quick Navigation</h3>
+                <nav className="space-y-2">
+                  <a href="#legal-framework" className="block text-sm text-gray-600 hover:text-black transition-colors">Legal Framework</a>
+                  <a href="#information-collection" className="block text-sm text-gray-600 hover:text-black transition-colors">Information We Collect</a>
+                  <a href="#legal-basis" className="block text-sm text-gray-600 hover:text-black transition-colors">Legal Basis</a>
+                  <a href="#data-usage" className="block text-sm text-gray-600 hover:text-black transition-colors">How We Use Data</a>
+                  <a href="#data-sharing" className="block text-sm text-gray-600 hover:text-black transition-colors">Data Sharing</a>
+                  <a href="#security" className="block text-sm text-gray-600 hover:text-black transition-colors">Security</a>
+                  <a href="#your-rights" className="block text-sm text-gray-600 hover:text-black transition-colors">Your Rights</a>
+                  <a href="#contact" className="block text-sm text-gray-600 hover:text-black transition-colors">Contact Us</a>
+                </nav>
+              </div>
+            </div>
+
+            {/* Main Content */}
+            <div className="lg:col-span-3">
+              <div className="prose prose-lg max-w-none">
+                <div className="bg-gray-50 rounded-lg p-6 mb-8">
+                  <p className="text-sm text-gray-600 mb-0">
+                    <strong>Last Updated:</strong> August 2025 | <strong>Effective Date:</strong> [Launch Date]
+                  </p>
           </div>
 
-          <div className="space-y-8 text-black leading-relaxed">
-            <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">Information We Collect</h2>
-              <p className="text-black mb-4">
-                We collect information you provide directly to us, such as when you create an account, 
-                sign up for our newsletter, or contact us for support. This may include:
+                <section id="legal-framework" className="mb-12">
+                  <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">Legal Framework</h2>
+                  <div className="bg-white border border-gray-200 rounded-lg p-6">
+                    <p className="text-gray-700 mb-6 leading-relaxed">
+                This Privacy Policy is governed by and complies with the following Indian laws and regulations:
               </p>
-              <ul className="list-disc list-inside text-black space-y-2 ml-4">
-                <li>Name and contact information</li>
-                <li>Account credentials</li>
-                <li>Communication preferences</li>
-                <li>Feedback and support requests</li>
-              </ul>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700">Information Technology Act, 2000</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700">Information Technology Rules, 2011</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700">Right to Privacy (Supreme Court)</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700">Personal Data Protection Bill, 2019</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700">Consumer Protection Act, 2019</span>
+                      </div>
+                    </div>
+                    <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                      <p className="text-sm text-blue-800">
+                <strong>Data Controller:</strong> mycrux is the data controller responsible for processing your personal information 
+                in accordance with applicable Indian data protection laws.
+              </p>
+                    </div>
+                  </div>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">How We Use Your Information</h2>
-              <p className="text-black mb-4">
-                We use the information we collect to provide, maintain, and improve our services:
-              </p>
-              <ul className="list-disc list-inside text-black space-y-2 ml-4">
-                <li>Process transactions and send related information</li>
-                <li>Send technical notices and support messages</li>
-                <li>Respond to your comments and questions</li>
-                <li>Develop new products and services</li>
-                <li>Protect against fraudulent or illegal activity</li>
-              </ul>
+                <section id="information-collection" className="mb-12">
+                  <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">Information We Collect</h2>
+                  <div className="space-y-8">
+                    <div className="bg-white border border-gray-200 rounded-lg p-6">
+                      <h3 className="text-xl font-semibold text-black mb-4 flex items-center">
+                        <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center mr-3">
+                          <span className="text-white text-sm font-bold">1</span>
+                        </div>
+                        Personal Information
+                      </h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div className="flex items-center space-x-3">
+                          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700">Name, email address, phone number</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700">Billing and shipping addresses</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700">Date of birth and gender</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700">Payment information (PCI-compliant)</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700">Account credentials and preferences</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-white border border-gray-200 rounded-lg p-6">
+                      <h3 className="text-xl font-semibold text-black mb-4 flex items-center">
+                        <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center mr-3">
+                          <span className="text-white text-sm font-bold">2</span>
+                        </div>
+                        Sensitive Personal Data (SPDI)
+                      </h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div className="flex items-center space-x-3">
+                          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700">Password and authentication</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700">Financial information</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700">Health information (with consent)</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700">Biometric data (3DStructFit)</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-white border border-gray-200 rounded-lg p-6">
+                      <h3 className="text-xl font-semibold text-black mb-4 flex items-center">
+                        <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center mr-3">
+                          <span className="text-white text-sm font-bold">3</span>
+                        </div>
+                        Automatically Collected Information
+                      </h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div className="flex items-center space-x-3">
+                          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700">IP address and device info</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700">Browser type and version</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700">Pages visited and time spent</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700">Cookies and tracking technologies</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">Information Sharing</h2>
-              <p className="text-black">
-                We do not sell, trade, or otherwise transfer your personal information to third parties 
-                without your consent, except as described in this policy. We may share information with 
-                trusted third-party service providers who assist us in operating our website and serving you.
+                <section id="legal-basis" className="mb-12">
+                  <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">Legal Basis for Processing</h2>
+                  <div className="bg-white border border-gray-200 rounded-lg p-6">
+                    <p className="text-gray-700 mb-6 leading-relaxed">
+                We process your personal information based on the following legal grounds under Indian law:
               </p>
+                    <div className="space-y-4">
+                      <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+                        <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                          <span className="text-white text-sm font-bold">✓</span>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-black mb-1">Consent</h4>
+                          <p className="text-gray-600 text-sm">Explicit consent for marketing communications and sensitive data processing</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+                        <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                          <span className="text-white text-sm font-bold">✓</span>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-black mb-1">Contract Performance</h4>
+                          <p className="text-gray-600 text-sm">Processing necessary for service delivery and account management</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+                        <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                          <span className="text-white text-sm font-bold">✓</span>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-black mb-1">Legal Obligation</h4>
+                          <p className="text-gray-600 text-sm">Compliance with applicable Indian laws and regulations</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+                        <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                          <span className="text-white text-sm font-bold">✓</span>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-black mb-1">Legitimate Interest</h4>
+                          <p className="text-gray-600 text-sm">Business operations, fraud prevention, and service improvement</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+                        <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                          <span className="text-white text-sm font-bold">✓</span>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-black mb-1">Vital Interest</h4>
+                          <p className="text-gray-600 text-sm">Protection of life and safety in emergency situations</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">Data Security</h2>
-              <p className="text-black">
-                We implement appropriate security measures to protect your personal information against 
-                unauthorized access, alteration, disclosure, or destruction. However, no method of 
-                transmission over the internet is 100% secure.
+                <section id="data-usage" className="mb-12">
+                  <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">How We Use Your Information</h2>
+                  <div className="bg-white border border-gray-200 rounded-lg p-6">
+                    <p className="text-gray-700 mb-6 leading-relaxed">
+                We use your information for the following purposes in compliance with Indian law:
               </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="text-gray-700">Process orders, payments, and deliveries</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="text-gray-700">Provide customer support and respond to inquiries</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="text-gray-700">Send order confirmations and shipping updates</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="text-gray-700">Personalize your shopping experience</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="text-gray-700">Conduct market research and improve services</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="text-gray-700">Prevent fraud and ensure platform security</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="text-gray-700">Comply with legal obligations</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="text-gray-700">Send marketing communications (with consent)</span>
+                      </div>
+                    </div>
+                  </div>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">Your Rights</h2>
-              <p className="text-black mb-4">
-                You have the right to:
+                <section id="data-sharing" className="mb-12">
+                  <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">Information Sharing and Disclosure</h2>
+                  <div className="bg-white border border-gray-200 rounded-lg p-6">
+                    <p className="text-gray-700 mb-6 leading-relaxed">
+                We may share your information with third parties only in the following circumstances:
               </p>
-              <ul className="list-disc list-inside text-black space-y-2 ml-4">
-                <li>Access and update your personal information</li>
-                <li>Request deletion of your data</li>
-                <li>Opt-out of marketing communications</li>
-                <li>Lodge a complaint with supervisory authorities</li>
-              </ul>
+                    <div className="space-y-4">
+                      <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-black mb-2">Service Providers</h4>
+                        <p className="text-gray-600 text-sm">Trusted partners who assist in operations (payment processors, logistics, customer support)</p>
+                      </div>
+                      <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-black mb-2">Legal Requirements</h4>
+                        <p className="text-gray-600 text-sm">When required by law, court order, or government authority</p>
+                      </div>
+                      <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-black mb-2">Business Transfers</h4>
+                        <p className="text-gray-600 text-sm">In case of merger, acquisition, or sale of assets</p>
+                      </div>
+                      <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-black mb-2">Consent</h4>
+                        <p className="text-gray-600 text-sm">With your explicit consent for specific purposes</p>
+                      </div>
+                      <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-black mb-2">Emergency Situations</h4>
+                        <p className="text-gray-600 text-sm">To protect life, safety, or property</p>
+                      </div>
+                    </div>
+                    <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-400 rounded-r-lg">
+                      <p className="text-sm text-blue-800">
+                <strong>Data Localization:</strong> We ensure that sensitive personal data is stored and processed 
+                within India as required by the Information Technology Act, 2000.
+              </p>
+                    </div>
+                  </div>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">Contact Us</h2>
-              <p className="text-black">
-                If you have any questions about this Privacy Policy, please contact us at{' '}
-                <Link href="/contact" className="text-black hover:text-gray-600 underline">
-                  our contact page
-                </Link>.
+                <section id="security" className="mb-12">
+                  <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">Data Security Measures</h2>
+                  <div className="bg-white border border-gray-200 rounded-lg p-6">
+                    <p className="text-gray-700 mb-6 leading-relaxed">
+                We implement comprehensive security measures as required by Indian law:
               </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                      <div className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        <span className="text-gray-700">ISO 27001 certified security practices</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        <span className="text-gray-700">SSL/TLS encryption for data transmission</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        <span className="text-gray-700">Secure data storage with access controls</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        <span className="text-gray-700">Regular security audits and assessments</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        <span className="text-gray-700">Employee training on data protection</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        <span className="text-gray-700">Incident response procedures</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        <span className="text-gray-700">Data backup and recovery systems</span>
+                      </div>
+                    </div>
+                    <div className="p-4 bg-red-50 border-l-4 border-red-400 rounded-r-lg">
+                      <p className="text-sm text-red-800">
+                <strong>Breach Notification:</strong> In case of any data breach, we will notify affected users 
+                and relevant authorities within 72 hours as required by Indian law.
+              </p>
+                    </div>
+                  </div>
             </section>
+
+                <section id="your-rights" className="mb-12">
+                  <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">Your Rights Under Indian Law</h2>
+                  <div className="bg-white border border-gray-200 rounded-lg p-6">
+                    <p className="text-gray-700 mb-6 leading-relaxed">
+                You have the following rights regarding your personal information:
+              </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                      <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-black mb-2">Right to Access</h4>
+                        <p className="text-gray-600 text-sm">Request copies of your personal information</p>
+                      </div>
+                      <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-black mb-2">Right to Correction</h4>
+                        <p className="text-gray-600 text-sm">Update or correct inaccurate information</p>
+                      </div>
+                      <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-black mb-2">Right to Withdraw Consent</h4>
+                        <p className="text-gray-600 text-sm">Withdraw consent for data processing</p>
+                      </div>
+                      <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-black mb-2">Right to Erasure</h4>
+                        <p className="text-gray-600 text-sm">Request deletion of your personal information</p>
+                      </div>
+                      <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-black mb-2">Right to Data Portability</h4>
+                        <p className="text-gray-600 text-sm">Receive your data in a structured format</p>
+                      </div>
+                      <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-black mb-2">Right to Object</h4>
+                        <p className="text-gray-600 text-sm">Object to processing for marketing purposes</p>
+                      </div>
+                      <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-black mb-2">Right to Grievance</h4>
+                        <p className="text-gray-600 text-sm">File complaints with supervisory authorities</p>
+                      </div>
+                    </div>
+                    <div className="p-4 bg-green-50 border-l-4 border-green-400 rounded-r-lg">
+                      <p className="text-sm text-green-800">
+                <strong>Exercise Your Rights:</strong> To exercise any of these rights, contact us at 
+                privacy@mycrux.com. We will respond within 30 days as required by law.
+              </p>
+                    </div>
+                  </div>
+            </section>
+
+
+
+                <section id="contact" className="mb-12">
+                  <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">Contact Information</h2>
+                  <div className="bg-white border border-gray-200 rounded-lg p-6">
+                    <p className="text-gray-700 mb-6 leading-relaxed">
+                For any privacy-related queries or concerns, please contact us:
+              </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-black mb-2 flex items-center">
+                          <svg className="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                          Email
+                        </h4>
+                        <p className="text-gray-600">admin@mycrux.com</p>
+                      </div>
+                      <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-black mb-2 flex items-center">
+                          <svg className="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                          </svg>
+                          Contact Page
+                        </h4>
+                        <Link href="/contact" className="text-gray-600 hover:text-black underline">Visit our contact page</Link>
+                      </div>
+                    </div>
+                    <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-400 rounded-r-lg">
+                      <p className="text-sm text-blue-800">
+                        <strong>Last Updated:</strong> August 2025 | <strong>Effective Date:</strong> [Launch Date]
+                      </p>
+                    </div>
+                  </div>
+            </section>
+              </div>
+            </div>
           </div>
         </div>
       </main>
