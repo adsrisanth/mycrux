@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   keywords: ["mycrux", "coming soon", "launch"],
   authors: [{ name: "mycrux" }],
   viewport: "width=device-width, initial-scale=1",
-  themeColor: "#000000",
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
@@ -29,9 +29,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="light">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-gray-100 h-screen overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black h-screen overflow-hidden`}
       >
         {children}
       </body>
