@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const Home = () => {
   return (
-    <div className="h-screen bg-white relative overflow-hidden">
+    <div className="min-h-screen bg-white relative overflow-hidden flex flex-col">
       {/* Animated background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000001a_1px,transparent_1px),linear-gradient(to_bottom,#0000001a_1px,transparent_1px)] bg-[size:20px_20px] animate-pulse"></div>
       
@@ -21,7 +21,7 @@ const Home = () => {
       <Navigation currentPage="home" />
 
       {/* Main content */}
-      <main className="relative z-10 flex flex-col items-center justify-center h-[calc(100vh-140px)] px-2 xs:px-4 sm:px-6 lg:px-8">
+      <main className="relative z-10 flex flex-col items-center justify-center flex-1 px-2 xs:px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 xs:space-y-6 sm:space-y-8 max-w-2xl mx-auto">
           {/* Logo with glow effect */}
           <div className="relative">

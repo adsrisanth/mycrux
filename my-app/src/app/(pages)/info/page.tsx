@@ -252,7 +252,7 @@ const Info = () => {
           </div>
         </div>
       </main>
-      <Footer currentPage="info" />
+      <Footer/>
     </div>
   );
 };
