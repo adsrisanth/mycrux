@@ -1,7 +1,7 @@
 import { MongoClient, Db } from 'mongodb';
 
-const MONGODB_URI = process.env.MONGODB_URI || process.env.MONGO_URL;
-const DB_NAME = process.env.MONGODB_DB_NAME || 'mycrux';
+const MONGODB_URI = process.env.MONGO_URL;
+const DB_NAME = 'mycrux';
 
 if (!MONGODB_URI) {
     console.log('MongoDB URI not set');
