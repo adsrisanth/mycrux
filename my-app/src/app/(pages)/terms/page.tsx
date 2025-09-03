@@ -230,7 +230,7 @@ const Terms = () => {
               <div className="prose prose-lg max-w-none">
                 <div className="bg-gray-50 rounded-lg p-6 mb-8">
                   <p className="text-sm text-gray-600 mb-0">
-                    <strong>Last Updated:</strong> December 2024
+                    <strong>Last Updated:</strong> September 2025
                   </p>
           </div>
 
@@ -356,27 +356,19 @@ const Terms = () => {
               </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                       <div className="flex items-center space-x-3">
-                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                        </svg>
+                        <span className="w-5 h-5 text-gray-500 text-lg font-bold">₹</span>
                         <span className="text-gray-700">Goods and Services Tax (GST) as applicable</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                        </svg>
+                        <span className="w-5 h-5 text-gray-500 text-lg font-bold">₹</span>
                         <span className="text-gray-700">Payment gateway terms and conditions</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                        </svg>
+                        <span className="w-5 h-5 text-gray-500 text-lg font-bold">₹</span>
                         <span className="text-gray-700">Refund policy in accordance with Consumer Protection Act</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                        </svg>
+                        <span className="w-5 h-5 text-gray-500 text-lg font-bold">₹</span>
                         <span className="text-gray-700">Chargeback and dispute resolution procedures</span>
                       </div>
                     </div>
@@ -605,7 +597,7 @@ const Terms = () => {
                     </div>
                     <div className="mt-6 p-4 bg-gray-50 border-l-4 border-gray-400 rounded-r-lg">
                       <p className="text-sm text-gray-800">
-                        <strong>Last Updated:</strong> December 2024
+                        <strong>Last Updated:</strong> September 2025
                       </p>
                     </div>
                   </div>

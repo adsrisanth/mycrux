@@ -2,15 +2,16 @@
 
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 
 const Cities = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState<'name' | 'state' | 'status'>('name');
   const [filterState, setFilterState] = useState<string>('all');
 
+
   // Comprehensive list of major Indian cities and towns
-  const cities = [
+  const cities = useMemo(() => [
     // Major Metros
     { name: 'Mumbai', state: 'Maharashtra', status: 'coming-soon' },
     { name: 'Delhi', state: 'Delhi', status: 'coming-soon' },
@@ -230,17 +231,11 @@ const Cities = () => {
     { name: 'Pali', state: 'Rajasthan', status: 'planned' },
     { name: 'Sri Ganganagar', state: 'Rajasthan', status: 'planned' },
     
-    // Coming Soon Cities (Next Phase)
+    // Additional Kerala Cities (Next Phase)
     { name: 'Thiruvananthapuram', state: 'Kerala', status: 'coming-soon' },
     { name: 'Kozhikode', state: 'Kerala', status: 'coming-soon' },
     { name: 'Thrissur', state: 'Kerala', status: 'coming-soon' },
     { name: 'Kollam', state: 'Kerala', status: 'coming-soon' },
-    { name: 'Palakkad', state: 'Kerala', status: 'coming-soon' },
-    { name: 'Malappuram', state: 'Kerala', status: 'coming-soon' },
-    { name: 'Kannur', state: 'Kerala', status: 'coming-soon' },
-    { name: 'Kasaragod', state: 'Kerala', status: 'coming-soon' },
-    { name: 'Alappuzha', state: 'Kerala', status: 'coming-soon' },
-    { name: 'Pathanamthitta', state: 'Kerala', status: 'coming-soon' },
     
     // Goa Cities (Coming Soon)
     { name: 'Goa', state: 'Goa', status: 'coming-soon' },
@@ -349,7 +344,7 @@ const Cities = () => {
     { name: 'Manglaur', state: 'Uttarakhand', status: 'planned' },
     { name: 'Kotdwar', state: 'Uttarakhand', status: 'planned' },
     { name: 'Kichha', state: 'Uttarakhand', status: 'planned' }
-  ];
+  ], []); // Empty dependency array since cities list is static
 
   // Get unique states for filter dropdown
   const states = useMemo(() => {
@@ -364,9 +359,9 @@ const Cities = () => {
     // Filter by search term
     if (searchTerm) {
       filtered = filtered.filter(city => 
-        city.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        city.state.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+      city.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      city.state.toLowerCase().includes(searchTerm.toLowerCase())
+    );
     }
     
     // Filter by state
@@ -383,7 +378,9 @@ const Cities = () => {
       } else if (sortBy === 'status') {
         // Sort by status priority: coming-soon > planned
         const statusOrder = { 'coming-soon': 0, 'planned': 1 };
-        const statusDiff = statusOrder[a.status as keyof typeof statusOrder] - statusOrder[b.status as keyof typeof statusOrder];
+        const aOrder = statusOrder[a.status as keyof typeof statusOrder] ?? 999;
+        const bOrder = statusOrder[b.status as keyof typeof statusOrder] ?? 999;
+        const statusDiff = aOrder - bOrder;
         if (statusDiff !== 0) return statusDiff;
         return a.name.localeCompare(b.name);
       }
@@ -394,7 +391,7 @@ const Cities = () => {
   }, [searchTerm, filterState, sortBy, cities]);
 
   // Get status text and color (monochrome only)
-  const getStatusInfo = (status: string) => {
+  const getStatusInfo = useCallback((status: string) => {
     switch (status) {
       case 'coming-soon':
         return { text: 'Coming Soon', color: 'bg-gray-600' };
@@ -403,7 +400,24 @@ const Cities = () => {
       default:
         return { text: 'Coming Soon', color: 'bg-gray-600' };
     }
-  };
+  }, []);
+
+  // Handle search with debouncing
+  const handleSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  }, []);
+
+  // Handle sort change
+  const handleSortChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSortBy(e.target.value as 'name' | 'state' | 'status');
+  }, []);
+
+  // Handle state filter change
+  const handleStateFilterChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+    setFilterState(e.target.value);
+  }, []);
+
+
 
   return (
     <div className="bg-white">
@@ -441,8 +455,10 @@ const Cities = () => {
                   type="text"
                   placeholder="Search your city..."
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onChange={handleSearchChange}
                   className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent text-lg"
+                  aria-label="Search for cities"
+                  maxLength={50}
                 />
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -457,8 +473,9 @@ const Cities = () => {
                   <label className="text-sm font-medium text-gray-700">Sort by:</label>
                   <select
                     value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value as 'name' | 'state' | 'status')}
+                    onChange={handleSortChange}
                     className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                    aria-label="Sort cities by"
                   >
                     <option value="name">City Name (A-Z)</option>
                     <option value="state">State</option>
@@ -470,8 +487,9 @@ const Cities = () => {
                   <label className="text-sm font-medium text-gray-700">Filter by state:</label>
                   <select
                     value={filterState}
-                    onChange={(e) => setFilterState(e.target.value)}
+                    onChange={handleStateFilterChange}
                     className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                    aria-label="Filter cities by state"
                   >
                     <option value="all">All States</option>
                     {states.map(state => (
@@ -502,12 +520,12 @@ const Cities = () => {
             {filteredCities.map((city, index) => {
               const statusInfo = getStatusInfo(city.status);
               return (
-                <div
-                  key={`${city.name}-${index}`}
-                  className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300"
-                >
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="font-semibold text-black text-lg">{city.name}</h3>
+              <div
+                key={`${city.name}-${index}`}
+                className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300"
+              >
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="font-semibold text-black text-lg">{city.name}</h3>
                     <div className={`w-3 h-3 rounded-full ${statusInfo.color}`}></div>
                   </div>
                   <p className="text-gray-600 text-sm mb-2">{city.state}</p>
@@ -538,19 +556,18 @@ const Cities = () => {
           )}
         </div>
 
+
+
         {/* CTA Section */}
-        <div className="bg-gray-50 py-20">
+        <div className="bg-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h2 className="text-4xl font-bold text-black mb-6">Don't see your city?</h2>
               <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-                We're constantly expanding our delivery network. Join our waitlist to be notified when we start delivering to your city, and get exclusive early access benefits.
+                We're constantly expanding our delivery network. Request your city to be prioritized in our expansion plans.
               </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <a href="/waitlist" className="bg-black text-white font-semibold py-4 px-10 rounded-lg hover:bg-gray-800 transition-colors text-center text-lg shadow-lg hover:shadow-xl">
-                  Join Waitlist
-                </a>
-                <a href="/contact" className="border-2 border-black text-black font-semibold py-4 px-10 rounded-lg hover:bg-black hover:text-white transition-all text-center text-lg">
+              <div className="flex justify-center">
+                <a href="/contact" className="bg-black text-white font-semibold py-4 px-10 rounded-lg hover:bg-gray-800 transition-colors text-center text-lg shadow-lg hover:shadow-xl">
                   Request City
                 </a>
               </div>

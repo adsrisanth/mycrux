@@ -13,9 +13,9 @@ const Contact = () => {
         <div className="relative bg-black text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
             <div className="text-center">
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
                 Contact Us
-            </h1>
+              </h1>
               <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
                 Get in touch with our team. We're here to help and answer any questions you may have.
               </p>

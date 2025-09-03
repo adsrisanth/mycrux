@@ -7,15 +7,15 @@ import Footer from '@/app/components/Footer';
 const Info = () => {
   return (
     <div className="bg-white">
-      <Navigation currentPage="info" />
+      <Navigation currentPage="about" />
       <main className="pt-20">
         {/* Hero Section - Nike Style */}
         <div className="relative bg-black text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
             <div className="text-center">
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
                 About mycrux
-            </h1>
+              </h1>
               <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
                 Discover the story behind India's premium shopping destination. Quality, innovation, and customer satisfaction at its core.
               </p>
@@ -33,10 +33,10 @@ const Info = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-black mb-6">
-              {t('info.ourStory')}
+              Our Story
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              {t('info.ourStoryDesc')}
+              Founded with a vision to revolutionize premium shopping in India, mycrux emerged from the belief that every Indian deserves access to world-class products and exceptional service. We're building more than just an e-commerce platform – we're creating a community of quality-conscious consumers who value authenticity, innovation, and excellence.
             </p>
           </div>
           
@@ -49,13 +49,13 @@ const Info = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-black">{t('info.ourMission')}</h3>
+                  <h3 className="text-2xl font-bold text-black">Our Mission</h3>
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  {t('info.ourMissionDesc')}
+                  To democratize premium shopping in India by providing access to high-quality, authentic products with exceptional customer service. We believe that premium shopping should be accessible, trustworthy, and delightful for every Indian consumer.
                 </p>
                 <p className="text-gray-600 text-sm">
-                  {t('info.ourMissionDesc2')}
+                  Through innovative technology, curated selections, and customer-centric approach, we're setting new standards for online retail in India.
                 </p>
               </div>
               
@@ -67,13 +67,13 @@ const Info = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-black">{t('info.ourVision')}</h3>
+                  <h3 className="text-2xl font-bold text-black">Our Vision</h3>
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  {t('info.ourVisionDesc')}
+                  To become India's most trusted premium shopping destination, where quality meets innovation and every customer experience exceeds expectations. We envision a future where premium shopping is seamless, personalized, and accessible to all.
                 </p>
                 <p className="text-gray-600 text-sm">
-                  {t('info.ourVisionDesc2')}
+                  By 2030, we aim to serve millions of customers across India with the finest products and the most advanced shopping technology.
                 </p>
               </div>
             </div>
@@ -86,7 +86,7 @@ const Info = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-black">{t('info.whyChoose')}</h3>
+                  <h3 className="text-2xl font-bold text-black">Why Choose mycrux?</h3>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">

@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Logo from '../assets/logo.png'
 
 interface NavigationProps {
-  currentPage?: 'home' | 'privacy' | 'terms' | 'contact' | 'waitlist' | 'info' | 'categories' | 'cities';
+  currentPage?: 'home' | 'privacy' | 'terms' | 'contact' | 'waitlist' | 'about' | 'categories' | 'cities';
 }
 
 const Navigation = ({ currentPage = 'home' }: NavigationProps) => {
@@ -29,14 +29,14 @@ const Navigation = ({ currentPage = 'home' }: NavigationProps) => {
           {/* Desktop Navigation - hidden on mobile */}
           <nav className="hidden sm:flex items-center space-x-4 text-xs sm:text-sm">
             <Link 
-              href="/" 
+              href="/info" 
               className={`transition-colors duration-300 ${
-                currentPage === 'home' 
+                currentPage === 'about' 
                   ? 'text-black border-b border-black pb-1 font-semibold' 
                   : 'text-black hover:text-gray-600'
               }`}
             >
-              Info
+              About
             </Link>
             <Link 
               href="/cities" 
@@ -87,9 +87,9 @@ const Navigation = ({ currentPage = 'home' }: NavigationProps) => {
           <div className="border-t border-black/20 bg-white/95 backdrop-blur-sm rounded-b-lg shadow-lg">
             <nav className="flex flex-col py-6 px-4 space-y-1">
               <Link 
-                href="/" 
+                href="/info" 
                 className={`px-4 py-3 rounded-lg transition-all duration-300 ${
-                  currentPage === 'home' 
+                  currentPage === 'about' 
                     ? 'text-black border-l-4 border-black bg-gray-50 font-medium' 
                     : 'text-black hover:text-gray-600 hover:bg-gray-50'
                 }`}
@@ -97,9 +97,9 @@ const Navigation = ({ currentPage = 'home' }: NavigationProps) => {
               >
                 <span className="flex items-center space-x-3">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span>Info</span>
+                  <span>About</span>
                 </span>
               </Link>
               <Link 

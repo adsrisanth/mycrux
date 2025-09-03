@@ -13,9 +13,9 @@ const Categories = () => {
         <div className="relative bg-black text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
             <div className="text-center">
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
                 Product Categories
-            </h1>
+              </h1>
               <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
                 Explore our curated collection of premium products across various categories. Quality and style in every item.
               </p>

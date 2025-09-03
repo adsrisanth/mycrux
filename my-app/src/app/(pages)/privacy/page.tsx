@@ -220,7 +220,7 @@ const Privacy = () => {
               <div className="prose prose-lg max-w-none">
                 <div className="bg-gray-50 rounded-lg p-6 mb-8">
                   <p className="text-sm text-gray-600 mb-0">
-                    <strong>Last Updated:</strong> August 2025
+                    <strong>Last Updated:</strong> September 2025
                   </p>
           </div>
 
@@ -663,7 +663,7 @@ const Privacy = () => {
                     </div>
                     <div className="mt-6 p-4 bg-gray-50 border-l-4 border-gray-400 rounded-r-lg">
                       <p className="text-sm text-gray-800">
-                        <strong>Last Updated:</strong> August 2025
+                        <strong>Last Updated:</strong> September 2025
                       </p>
                     </div>
                   </div>

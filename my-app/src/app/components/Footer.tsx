@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 interface FooterProps {
-  currentPage?: 'home' | 'privacy' | 'terms' | 'contact' | 'waitlist' | 'shop' | 'categories' | 'cities';
+  currentPage?: 'home' | 'privacy' | 'terms' | 'contact' | 'waitlist' | 'about' | 'categories' | 'cities';
 }
 
 const Footer = ({ currentPage = 'home' }: FooterProps) => {
@@ -18,31 +18,19 @@ const Footer = ({ currentPage = 'home' }: FooterProps) => {
           <div className="flex items-center space-x-3 xs:space-x-4 text-xs xs:text-sm">
             <Link 
               href="/privacy" 
-              className={`transition-colors duration-300 ${
-                currentPage === 'privacy' 
-                  ? 'text-black hover:text-gray-600' 
-                  : 'text-black hover:text-gray-600'
-              }`}
+              className="text-black hover:text-gray-600 transition-colors duration-300"
             >
               Privacy
             </Link>
             <Link 
               href="/terms" 
-              className={`transition-colors duration-300 ${
-                currentPage === 'terms' 
-                  ? 'text-black hover:text-gray-600' 
-                  : 'text-black hover:text-gray-600'
-              }`}
+              className="text-black hover:text-gray-600 transition-colors duration-300"
             >
               Terms
             </Link>
             <Link 
               href="/contact" 
-              className={`transition-colors duration-300 ${
-                currentPage === 'contact' 
-                  ? 'text-black hover:text-gray-600' 
-                  : 'text-black hover:text-gray-600'
-              }`}
+              className="text-black hover:text-gray-600 transition-colors duration-300"
             >
               Contact
             </Link>
