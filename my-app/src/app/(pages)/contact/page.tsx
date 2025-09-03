@@ -1,5 +1,8 @@
+"use client";
+
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
+
 
 const Contact = () => {
   return (
@@ -10,11 +13,11 @@ const Contact = () => {
         <div className="relative bg-black text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
             <div className="text-center">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
                 Contact Us
-              </h1>
+            </h1>
               <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Have questions or need support? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+                Get in touch with our team. We're here to help and answer any questions you may have.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <div className="bg-white text-black px-4 py-2 rounded-full">24/7 Support</div>
@@ -91,6 +94,7 @@ const Contact = () => {
                     className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-black transition-all duration-300"
                   >
                     <option value="">Select a subject</option>
+                    <option value="requesting-city">Requesting City</option>
                     <option value="general">General Inquiry</option>
                     <option value="support">Technical Support</option>
                     <option value="partnership">Partnership</option>
@@ -143,10 +147,10 @@ const Contact = () => {
                       <h3 className="text-lg font-semibold text-black mb-2">Email Support</h3>
                       <p className="text-gray-600 mb-2">Get help via email</p>
                       <a 
-                        href="mailto:admin@mycrux.com" 
+                        href="mailto:admin@crux.in" 
                         className="text-black hover:text-gray-600 transition-colors duration-300 font-medium"
                       >
-                        admin@mycrux.com
+                        admin@crux.in
                       </a>
                     </div>
                   </div>

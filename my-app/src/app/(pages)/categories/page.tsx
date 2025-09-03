@@ -1,11 +1,8 @@
+"use client";
+
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
-import { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Shop - mycrux',
-  description: 'Shop premium fashion, beauty, wellness, and lifestyle products. Made in India, developed in India.',
-};
 
 const Categories = () => {
   return (
@@ -16,11 +13,11 @@ const Categories = () => {
         <div className="relative bg-black text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
             <div className="text-center">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-                Shop Premium
-              </h1>
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+                Product Categories
+            </h1>
               <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Curated collection of premium fashion, beauty, wellness, and lifestyle products
+                Explore our curated collection of premium products across various categories. Quality and style in every item.
               </p>
               <div className="inline-flex items-center bg-white text-black px-6 py-3 rounded-full font-semibold">
                 🇮🇳 Made in India

@@ -1,11 +1,8 @@
+"use client";
+
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
-import { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'About - mycrux',
-  description: 'Learn about mycrux - your premium destination for curated fashion, beauty, wellness, and lifestyle products.',
-};
 
 const Info = () => {
   return (
@@ -16,11 +13,11 @@ const Info = () => {
         <div className="relative bg-black text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
             <div className="text-center">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
                 About mycrux
-              </h1>
+            </h1>
               <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Your premium destination for curated fashion, beauty, wellness, and lifestyle products across India.
+                Discover the story behind India's premium shopping destination. Quality, innovation, and customer satisfaction at its core.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <div className="bg-white text-black px-4 py-2 rounded-full">Premium Quality</div>
@@ -36,12 +33,10 @@ const Info = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-black mb-6">
-              Our Story
+              {t('info.ourStory')}
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Born from a vision to revolutionize online shopping in India, mycrux represents the perfect fusion 
-              of technology, tradition, and premium quality. We're not just another e-commerce platform – 
-              we're building the future of lifestyle shopping.
+              {t('info.ourStoryDesc')}
             </p>
           </div>
           
@@ -54,16 +49,13 @@ const Info = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-black">Our Mission</h3>
+                  <h3 className="text-2xl font-bold text-black">{t('info.ourMission')}</h3>
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  To provide Indian consumers with access to premium, curated products that enhance their lifestyle. 
-                  We believe in quality over quantity, and every product in our collection is carefully selected 
-                  to meet the highest standards of excellence.
+                  {t('info.ourMissionDesc')}
                 </p>
                 <p className="text-gray-600 text-sm">
-                  We're committed to supporting local artisans and bringing authentic, high-quality products 
-                  to discerning customers who value craftsmanship and sustainability.
+                  {t('info.ourMissionDesc2')}
                 </p>
               </div>
               
@@ -75,16 +67,13 @@ const Info = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-black">Our Vision</h3>
+                  <h3 className="text-2xl font-bold text-black">{t('info.ourVision')}</h3>
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  To become India's most trusted premium lifestyle platform, where technology meets tradition, 
-                  and where every customer feels valued and understood. We're building a community of 
-                  discerning consumers who appreciate quality and authenticity.
+                  {t('info.ourVisionDesc')}
                 </p>
                 <p className="text-gray-600 text-sm">
-                  By 2030, we aim to be the go-to destination for premium lifestyle products, 
-                  setting new standards in customer experience and product quality.
+                  {t('info.ourVisionDesc2')}
                 </p>
               </div>
             </div>
@@ -97,7 +86,7 @@ const Info = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-black">Why Choose mycrux?</h3>
+                  <h3 className="text-2xl font-bold text-black">{t('info.whyChoose')}</h3>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
@@ -111,7 +100,7 @@ const Info = () => {
                     <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                     <div>
                       <span className="text-gray-700 font-medium">Fast and reliable delivery across India</span>
-                      <p className="text-gray-500 text-sm">2-5 day delivery to 500+ cities</p>
+                      <p className="text-gray-500 text-sm">Targeting 2-5 day delivery to 500+ cities</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
@@ -338,14 +327,14 @@ const Info = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">500+</div>
+                <div className="text-4xl font-bold mb-2">0</div>
                 <div className="text-gray-300">Cities Served</div>
-                <div className="text-sm text-gray-400 mt-1">Across India</div>
+                <div className="text-sm text-gray-400 mt-1">Targeting 500+ cities</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">10K+</div>
+                <div className="text-4xl font-bold mb-2">0</div>
                 <div className="text-gray-300">Waitlist Members</div>
-                <div className="text-sm text-gray-400 mt-1">And growing</div>
+                <div className="text-sm text-gray-400 mt-1">About to start</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">24/7</div>
@@ -368,7 +357,7 @@ const Info = () => {
               <h2 className="text-4xl font-bold text-black mb-6">Ready to experience premium shopping?</h2>
               <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
                 Join our waitlist to be the first to know when we launch and get exclusive early access benefits. 
-                Be part of the premium shopping revolution in India.
+                Be part of the premium shopping revolution in India. Waitlist starting soon!
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <a href="/waitlist" className="bg-black text-white font-semibold py-4 px-10 rounded-lg hover:bg-gray-800 transition-colors text-center text-lg shadow-lg hover:shadow-xl">

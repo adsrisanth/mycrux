@@ -1,7 +1,9 @@
+"use client";
+
 import Link from "next/link";
 
 interface FooterProps {
-  currentPage?: 'home' | 'privacy' | 'terms' | 'contact' | 'waitlist' | 'shop' | 'categories';
+  currentPage?: 'home' | 'privacy' | 'terms' | 'contact' | 'waitlist' | 'shop' | 'categories' | 'cities';
 }
 
 const Footer = ({ currentPage = 'home' }: FooterProps) => {

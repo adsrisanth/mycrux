@@ -1,10 +1,107 @@
+"use client";
+
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import Link from "next/link";
+import { useState, useEffect, useCallback } from "react";
+
 
 const Privacy = () => {
+  const [activeSection, setActiveSection] = useState('legal-framework');
+
+  // Handle smooth scrolling to sections
+  const scrollToSection = useCallback((sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.offsetTop - 100; // Account for fixed header
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  }, []);
+
+  // Throttle function for performance
+  const throttle = (func: Function, delay: number) => {
+    let timeoutId: NodeJS.Timeout;
+    let lastExecTime = 0;
+    return function (this: any, ...args: any[]) {
+      const currentTime = Date.now();
+      
+      if (currentTime - lastExecTime > delay) {
+        func.apply(this, args);
+        lastExecTime = currentTime;
+      } else {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          func.apply(this, args);
+          lastExecTime = Date.now();
+        }, delay - (currentTime - lastExecTime));
+      }
+    };
+  };
+
+  useEffect(() => {
+    const sections = [
+      'legal-framework',
+      'information-collection',
+      'legal-basis',
+      'data-usage',
+      'data-sharing',
+      'security',
+      'your-rights',
+      'contact'
+    ];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+        rootMargin: '-100px 0px -30% 0px'
+      }
+    );
+
+    sections.forEach((sectionId) => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    // Add throttled scroll listener as fallback for contact section
+    const handleScroll = throttle(() => {
+      const contactElement = document.getElementById('contact');
+      if (contactElement) {
+        const rect = contactElement.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // If contact section is visible in viewport, activate it
+        if (rect.top <= windowHeight * 0.5 && rect.bottom >= windowHeight * 0.3) {
+          setActiveSection('contact');
+        }
+      }
+    }, 100); // Throttle to 100ms
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      sections.forEach((sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
-    <div className="bg-white">
+    <div className="bg-white scroll-smooth">
       <Navigation currentPage="privacy" />
       <main className="pt-20">
         {/* Hero Section - Nike Style */}
@@ -34,14 +131,86 @@ const Privacy = () => {
               <div className="sticky top-24">
                 <h3 className="text-lg font-semibold text-black mb-4">Quick Navigation</h3>
                 <nav className="space-y-2">
-                  <a href="#legal-framework" className="block text-sm text-gray-600 hover:text-black transition-colors">Legal Framework</a>
-                  <a href="#information-collection" className="block text-sm text-gray-600 hover:text-black transition-colors">Information We Collect</a>
-                  <a href="#legal-basis" className="block text-sm text-gray-600 hover:text-black transition-colors">Legal Basis</a>
-                  <a href="#data-usage" className="block text-sm text-gray-600 hover:text-black transition-colors">How We Use Data</a>
-                  <a href="#data-sharing" className="block text-sm text-gray-600 hover:text-black transition-colors">Data Sharing</a>
-                  <a href="#security" className="block text-sm text-gray-600 hover:text-black transition-colors">Security</a>
-                  <a href="#your-rights" className="block text-sm text-gray-600 hover:text-black transition-colors">Your Rights</a>
-                  <a href="#contact" className="block text-sm text-gray-600 hover:text-black transition-colors">Contact Us</a>
+                  <button 
+                    onClick={() => scrollToSection('legal-framework')}
+                    className={`block text-sm transition-colors text-left w-full ${
+                      activeSection === 'legal-framework' 
+                        ? 'text-black font-bold border-l-4 border-black pl-2' 
+                        : 'text-gray-600 hover:text-black'
+                    }`}
+                  >
+                    Legal Framework
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('information-collection')}
+                    className={`block text-sm transition-colors text-left w-full ${
+                      activeSection === 'information-collection' 
+                        ? 'text-black font-bold border-l-4 border-black pl-2' 
+                        : 'text-gray-600 hover:text-black'
+                    }`}
+                  >
+                    Information We Collect
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('legal-basis')}
+                    className={`block text-sm transition-colors text-left w-full ${
+                      activeSection === 'legal-basis' 
+                        ? 'text-black font-bold border-l-4 border-black pl-2' 
+                        : 'text-gray-600 hover:text-black'
+                    }`}
+                  >
+                    Legal Basis
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('data-usage')}
+                    className={`block text-sm transition-colors text-left w-full ${
+                      activeSection === 'data-usage' 
+                        ? 'text-black font-bold border-l-4 border-black pl-2' 
+                        : 'text-gray-600 hover:text-black'
+                    }`}
+                  >
+                    How We Use Data
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('data-sharing')}
+                    className={`block text-sm transition-colors text-left w-full ${
+                      activeSection === 'data-sharing' 
+                        ? 'text-black font-bold border-l-4 border-black pl-2' 
+                        : 'text-gray-600 hover:text-black'
+                    }`}
+                  >
+                    Data Sharing
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('security')}
+                    className={`block text-sm transition-colors text-left w-full ${
+                      activeSection === 'security' 
+                        ? 'text-black font-bold border-l-4 border-black pl-2' 
+                        : 'text-gray-600 hover:text-black'
+                    }`}
+                  >
+                    Security
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('your-rights')}
+                    className={`block text-sm transition-colors text-left w-full ${
+                      activeSection === 'your-rights' 
+                        ? 'text-black font-bold border-l-4 border-black pl-2' 
+                        : 'text-gray-600 hover:text-black'
+                    }`}
+                  >
+                    Your Rights
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('contact')}
+                    className={`block text-sm transition-colors text-left w-full ${
+                      activeSection === 'contact' 
+                        ? 'text-black font-bold border-l-4 border-black pl-2' 
+                        : 'text-gray-600 hover:text-black'
+                    }`}
+                  >
+                    Contact Us
+                  </button>
                 </nav>
               </div>
             </div>
@@ -51,11 +220,11 @@ const Privacy = () => {
               <div className="prose prose-lg max-w-none">
                 <div className="bg-gray-50 rounded-lg p-6 mb-8">
                   <p className="text-sm text-gray-600 mb-0">
-                    <strong>Last Updated:</strong> August 2025 | <strong>Effective Date:</strong> [Launch Date]
+                    <strong>Last Updated:</strong> August 2025
                   </p>
           </div>
 
-                <section id="legal-framework" className="mb-12">
+                <section id="legal-framework" className="mb-12 pt-4">
                   <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">Legal Framework</h2>
                   <div className="bg-white border border-gray-200 rounded-lg p-6">
                     <p className="text-gray-700 mb-6 leading-relaxed">
@@ -83,8 +252,8 @@ const Privacy = () => {
                         <span className="text-gray-700">Consumer Protection Act, 2019</span>
                       </div>
                     </div>
-                    <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
-                      <p className="text-sm text-blue-800">
+                    <div className="bg-gray-50 border-l-4 border-gray-400 p-4 rounded-r-lg">
+                      <p className="text-sm text-gray-800">
                 <strong>Data Controller:</strong> mycrux is the data controller responsible for processing your personal information 
                 in accordance with applicable Indian data protection laws.
               </p>
@@ -92,7 +261,7 @@ const Privacy = () => {
                   </div>
             </section>
 
-                <section id="information-collection" className="mb-12">
+                <section id="information-collection" className="mb-12 pt-4">
                   <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">Information We Collect</h2>
                   <div className="space-y-8">
                     <div className="bg-white border border-gray-200 rounded-lg p-6">
@@ -208,7 +377,7 @@ const Privacy = () => {
                   </div>
             </section>
 
-                <section id="legal-basis" className="mb-12">
+                <section id="legal-basis" className="mb-12 pt-4">
                   <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">Legal Basis for Processing</h2>
                   <div className="bg-white border border-gray-200 rounded-lg p-6">
                     <p className="text-gray-700 mb-6 leading-relaxed">
@@ -264,7 +433,7 @@ const Privacy = () => {
                   </div>
             </section>
 
-                <section id="data-usage" className="mb-12">
+                <section id="data-usage" className="mb-12 pt-4">
                   <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">How We Use Your Information</h2>
                   <div className="bg-white border border-gray-200 rounded-lg p-6">
                     <p className="text-gray-700 mb-6 leading-relaxed">
@@ -323,7 +492,7 @@ const Privacy = () => {
                   </div>
             </section>
 
-                <section id="data-sharing" className="mb-12">
+                <section id="data-sharing" className="mb-12 pt-4">
                   <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">Information Sharing and Disclosure</h2>
                   <div className="bg-white border border-gray-200 rounded-lg p-6">
                     <p className="text-gray-700 mb-6 leading-relaxed">
@@ -351,8 +520,8 @@ const Privacy = () => {
                         <p className="text-gray-600 text-sm">To protect life, safety, or property</p>
                       </div>
                     </div>
-                    <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-400 rounded-r-lg">
-                      <p className="text-sm text-blue-800">
+                    <div className="mt-6 p-4 bg-gray-50 border-l-4 border-gray-400 rounded-r-lg">
+                      <p className="text-sm text-gray-800">
                 <strong>Data Localization:</strong> We ensure that sensitive personal data is stored and processed 
                 within India as required by the Information Technology Act, 2000.
               </p>
@@ -360,7 +529,7 @@ const Privacy = () => {
                   </div>
             </section>
 
-                <section id="security" className="mb-12">
+                <section id="security" className="mb-12 pt-4">
                   <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">Data Security Measures</h2>
                   <div className="bg-white border border-gray-200 rounded-lg p-6">
                     <p className="text-gray-700 mb-6 leading-relaxed">
@@ -368,50 +537,50 @@ const Privacy = () => {
               </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                       <div className="flex items-center space-x-3">
-                        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                         <span className="text-gray-700">ISO 27001 certified security practices</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                         <span className="text-gray-700">SSL/TLS encryption for data transmission</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                         <span className="text-gray-700">Secure data storage with access controls</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                         <span className="text-gray-700">Regular security audits and assessments</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                         <span className="text-gray-700">Employee training on data protection</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                         <span className="text-gray-700">Incident response procedures</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                         <span className="text-gray-700">Data backup and recovery systems</span>
                       </div>
                     </div>
-                    <div className="p-4 bg-red-50 border-l-4 border-red-400 rounded-r-lg">
-                      <p className="text-sm text-red-800">
+                    <div className="p-4 bg-gray-50 border-l-4 border-gray-400 rounded-r-lg">
+                      <p className="text-sm text-gray-800">
                 <strong>Breach Notification:</strong> In case of any data breach, we will notify affected users 
                 and relevant authorities within 72 hours as required by Indian law.
               </p>
@@ -419,7 +588,7 @@ const Privacy = () => {
                   </div>
             </section>
 
-                <section id="your-rights" className="mb-12">
+                <section id="your-rights" className="mb-12 pt-4">
                   <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">Your Rights Under Indian Law</h2>
                   <div className="bg-white border border-gray-200 rounded-lg p-6">
                     <p className="text-gray-700 mb-6 leading-relaxed">
@@ -455,10 +624,10 @@ const Privacy = () => {
                         <p className="text-gray-600 text-sm">File complaints with supervisory authorities</p>
                       </div>
                     </div>
-                    <div className="p-4 bg-green-50 border-l-4 border-green-400 rounded-r-lg">
-                      <p className="text-sm text-green-800">
+                    <div className="p-4 bg-gray-50 border-l-4 border-gray-400 rounded-r-lg">
+                      <p className="text-sm text-gray-800">
                 <strong>Exercise Your Rights:</strong> To exercise any of these rights, contact us at 
-                privacy@mycrux.com. We will respond within 30 days as required by law.
+                admin@crux.in. We will respond within 30 days as required by law.
               </p>
                     </div>
                   </div>
@@ -466,7 +635,7 @@ const Privacy = () => {
 
 
 
-                <section id="contact" className="mb-12">
+                <section id="contact" className="mb-12 pt-4">
                   <h2 className="text-2xl font-bold text-black mb-6 border-b border-gray-200 pb-3">Contact Information</h2>
                   <div className="bg-white border border-gray-200 rounded-lg p-6">
                     <p className="text-gray-700 mb-6 leading-relaxed">
@@ -480,7 +649,7 @@ const Privacy = () => {
                           </svg>
                           Email
                         </h4>
-                        <p className="text-gray-600">admin@mycrux.com</p>
+                        <p className="text-gray-600">admin@crux.in</p>
                       </div>
                       <div className="p-4 bg-gray-50 rounded-lg">
                         <h4 className="font-semibold text-black mb-2 flex items-center">
@@ -492,9 +661,9 @@ const Privacy = () => {
                         <Link href="/contact" className="text-gray-600 hover:text-black underline">Visit our contact page</Link>
                       </div>
                     </div>
-                    <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-400 rounded-r-lg">
-                      <p className="text-sm text-blue-800">
-                        <strong>Last Updated:</strong> August 2025 | <strong>Effective Date:</strong> [Launch Date]
+                    <div className="mt-6 p-4 bg-gray-50 border-l-4 border-gray-400 rounded-r-lg">
+                      <p className="text-sm text-gray-800">
+                        <strong>Last Updated:</strong> August 2025
                       </p>
                     </div>
                   </div>

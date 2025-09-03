@@ -1,11 +1,7 @@
+"use client";
+
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Join Waitlist - mycrux',
-  description: 'Join the mycrux waitlist to be first in line when we launch.',
-};
 
 const Waitlist = () => {
   return (
@@ -23,9 +19,24 @@ const Waitlist = () => {
                 Be first in line for exclusive membership access. Unlock premium benefits before anyone else.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <div className="bg-white text-black px-4 py-2 rounded-full">Priority Access</div>
-                <div className="bg-white text-black px-4 py-2 rounded-full">Exclusive Offers</div>
+                <div className="bg-white text-black px-4 py-2 rounded-full">Early Access</div>
+                <div className="bg-white text-black px-4 py-2 rounded-full">Exclusive Discounts</div>
                 <div className="bg-white text-black px-4 py-2 rounded-full">3DStructFit Beta</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Pricing Section */}
+        <div className="bg-gray-50 py-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-black">
+              <h2 className="text-3xl font-bold text-black mb-4">Early Access Fee</h2>
+              <div className="text-6xl font-bold text-black mb-2">₹49</div>
+              <p className="text-lg text-gray-600 mb-6">Early access fee (refundable)</p>
+              <div className="bg-black text-white rounded-lg p-4 mb-6">
+                <p className="text-lg font-semibold">Secure your spot in the queue!</p>
+                <p className="text-sm opacity-90">Refundable if you're not satisfied</p>
               </div>
             </div>
           </div>
@@ -37,229 +48,224 @@ const Waitlist = () => {
             <div>
               <h2 className="text-3xl font-bold text-black mb-6">Get Early Access</h2>
               <p className="text-lg text-gray-600 mb-8">
-                Join thousands of others who are already on the waitlist. Be among the first to experience premium shopping with mycrux.
+                Join thousands of early adopters who are already on our waitlist. Get exclusive access to premium products, special discounts, and be the first to experience our revolutionary 3DStructFit technology.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-black rounded-full"></div>
-                  <span className="text-gray-700">Priority queue position</span>
+                  <span className="text-gray-700">Exclusive early access to new products</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-black rounded-full"></div>
-                  <span className="text-gray-700">Exclusive membership offers</span>
+                  <span className="text-gray-700">Special member-only discounts</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-black rounded-full"></div>
-                  <span className="text-gray-700">Early access to 3DStructFit</span>
+                  <span className="text-gray-700">Priority customer support</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-black rounded-full"></div>
-                  <span className="text-gray-700">Made in India products only</span>
+                  <span className="text-gray-700">Beta access to 3DStructFit technology</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-black rounded-full"></div>
+                  <span className="text-gray-700">Free shipping on all orders</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-black rounded-full"></div>
+                  <span className="text-gray-700">Exclusive member events and previews</span>
                 </div>
               </div>
             </div>
-
             <div>
               <form className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-black mb-2">First name</label>
-                    <input 
-                      id="firstName" 
-                      name="firstName" 
-                      type="text" 
-                      placeholder="First Name" 
-                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-gray-500" 
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-black mb-2">Last name</label>
-                    <input 
-                      id="lastName" 
-                      name="lastName" 
-                      type="text" 
-                      placeholder="Last Name" 
-                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-gray-500" 
-                    />
-                  </div>
-                </div>
-
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-black mb-2">Email</label>
-                  <input 
-                    id="email" 
-                    name="email" 
-                    type="email" 
-                    placeholder="you@example.com" 
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-gray-500" 
+                  <label htmlFor="fullName" className="block text-sm font-medium text-black mb-2">Full Name</label>
+                  <input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    placeholder="Enter your full name"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-gray-500"
                   />
                 </div>
-
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-black mb-2">Email Address</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-gray-500"
+                  />
+                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-black mb-2">Phone (optional)</label>
-                    <input 
-                      id="phone" 
-                      name="phone" 
-                      type="tel" 
-                      placeholder="+91 000 000 0000" 
-                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-gray-500" 
+                    <label htmlFor="phone" className="block text-sm font-medium text-black mb-2">Phone Number</label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+91 000 000 0000"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-gray-500"
                     />
                   </div>
                   <div>
-                    <label htmlFor="country" className="block text-sm font-medium text-black mb-2">Country</label>
-                    <input 
-                      id="country" 
-                      name="country" 
-                      type="text" 
-                      placeholder="India" 
-                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-gray-500" 
+                    <label htmlFor="city" className="block text-sm font-medium text-black mb-2">City</label>
+                    <input
+                      id="city"
+                      name="city"
+                      type="text"
+                      placeholder="Enter your city"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-gray-500"
                     />
                   </div>
                 </div>
-
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   className="w-full bg-black text-white font-semibold py-4 px-6 rounded-lg hover:bg-gray-800 transition-colors duration-300"
                 >
-                  Join Waitlist
+                  Join Waitlist - ₹49
                 </button>
-
                 <p className="text-sm text-gray-600">
-                  By joining, you agree to our <a href="/terms" className="underline text-black hover:text-gray-600">Terms</a> and acknowledge our <a href="/privacy" className="underline text-black hover:text-gray-600">Privacy Policy</a>.
+                  By joining the waitlist, you agree to our Terms of Service and Privacy Policy. Your ₹49 fee is fully refundable.
                 </p>
               </form>
             </div>
           </div>
         </div>
 
-        {/* Membership Tiers Section */}
-        <div className="bg-gray-50 py-16">
+        {/* Membership Tiers */}
+        <div className="bg-gray-50 py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-black mb-4">
-                Membership Tiers
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Choose the membership level that's right for you. All tiers include exclusive waitlist benefits.
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-black mb-6">Membership Tiers</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Choose the membership level that suits your lifestyle and unlock exclusive benefits.
               </p>
             </div>
-
+            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Basic Plan */}
-              <div className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-black mb-2">Basic</h3>
-                  <div className="text-4xl font-bold text-black mb-2">FREE</div>
-                  <p className="text-gray-600">All basic plans</p>
+              {/* Basic Tier */}
+              <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-black mb-4">Basic</h3>
+                  <div className="text-4xl font-bold text-black mb-2">Free</div>
+                  <p className="text-gray-600">Standard access</p>
                 </div>
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-4 mb-8">
                   <li className="flex items-center space-x-3">
-                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">Standard delivery (7-10 days)</span>
+                    <span className="text-gray-700">Access to basic products</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">Basic discounts</span>
+                    <span className="text-gray-700">Standard shipping</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">Quality checkings</span>
+                    <span className="text-gray-700">Email support</span>
                   </li>
                 </ul>
-                <button className="w-full bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors">
+                <button className="w-full bg-gray-200 text-black font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors duration-300">
+                  Current Plan
+                </button>
+              </div>
+
+              {/* Premium Tier */}
+              <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-black relative">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-black text-white px-4 py-2 rounded-full text-sm font-semibold">Most Popular</span>
+                </div>
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-black mb-4">Premium</h3>
+                  <div className="text-4xl font-bold text-black mb-2">₹49</div>
+                  <p className="text-gray-600">Early access fee</p>
+                </div>
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-center space-x-3">
+                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">Early access to new products</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">15% member discount</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">Free shipping</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">Priority support</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">3DStructFit beta access</span>
+                  </li>
+                </ul>
+                <button className="w-full bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors duration-300">
                   Join Waitlist
                 </button>
               </div>
 
-              {/* Pro Plan */}
-              <div className="bg-white border-2 border-black rounded-lg p-8 hover:shadow-lg transition-shadow relative">
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-black text-white text-sm font-semibold px-4 py-2 rounded-full">MOST POPULAR</span>
+              {/* VIP Tier */}
+              <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-black mb-4">VIP</h3>
+                  <div className="text-4xl font-bold text-black mb-2">₹199</div>
+                  <p className="text-gray-600">Premium experience</p>
                 </div>
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-black mb-2">Pro</h3>
-                  <div className="text-4xl font-bold text-black mb-2">FREE</div>
-                  <p className="text-gray-600">For waitlisted people (6 months)</p>
-                </div>
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-4 mb-8">
                   <li className="flex items-center space-x-3">
-                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">Standard delivery</span>
+                    <span className="text-gray-700">Everything in Premium</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">Exclusive discounts</span>
+                    <span className="text-gray-700">25% member discount</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">Personalized recommendations</span>
+                    <span className="text-gray-700">Same-day delivery</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">Early product access</span>
+                    <span className="text-gray-700">Personal shopping assistant</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">Exclusive VIP events</span>
                   </li>
                 </ul>
-                <button className="w-full bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors">
-                  Join Waitlist
-                </button>
-              </div>
-
-              {/* Advanced Plan */}
-              <div className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-black mb-2">Advanced</h3>
-                  <div className="text-4xl font-bold text-black mb-2">50% OFF</div>
-                  <p className="text-gray-600">For waitlisted people (6 months)</p>
-                </div>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center space-x-3">
-                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-700">Everything in Pro</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-700">Beta 3DStructFit</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-700">AI-powered styling</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-700">Exclusive product launches</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-700">Express delivery - no extra fee</span>
-                  </li>
-                </ul>
-                <button className="w-full bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors">
-                  Join Waitlist
+                <button className="w-full bg-gray-200 text-black font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors duration-300">
+                  Coming Soon
                 </button>
               </div>
             </div>
@@ -267,51 +273,45 @@ const Waitlist = () => {
         </div>
 
         {/* Additional Benefits Section */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-black mb-4">Exclusive Waitlist Benefits</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Join thousands of others who are already on the waitlist and get these exclusive benefits.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-black mb-3">Early Access</h3>
-              <p className="text-gray-600">Be the first to shop when we launch with exclusive early access.</p>
+        <div className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-black mb-6">Why Join Our Waitlist?</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Be part of the future of premium shopping in India. Join thousands of early adopters who are already on our waitlist.
+              </p>
             </div>
             
-            <div className="text-center">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl font-bold">₹</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-black mb-4">Early Access</h3>
+                <p className="text-gray-600">Get first access to new products and exclusive collections before they're available to the public.</p>
               </div>
-              <h3 className="text-xl font-bold text-black mb-3">Special Pricing</h3>
-              <p className="text-gray-600">Get exclusive discounts up to ₹1000 off and special rupee pricing for waitlist members.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-black mb-4">Exclusive Discounts</h3>
+                <p className="text-gray-600">Enjoy special member-only discounts and early bird pricing on premium products.</p>
               </div>
-              <h3 className="text-xl font-bold text-black mb-3">Beta Testing</h3>
-              <p className="text-gray-600">Test our 3DStructFit technology before anyone else.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-black mb-4">Premium Experience</h3>
+                <p className="text-gray-600">Experience the future of shopping with our revolutionary 3DStructFit technology and personalized recommendations.</p>
               </div>
-              <h3 className="text-xl font-bold text-black mb-3">VIP Support</h3>
-              <p className="text-gray-600">Get priority customer support and personalized assistance.</p>
             </div>
           </div>
         </div>
