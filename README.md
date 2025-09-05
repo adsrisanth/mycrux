@@ -1,4 +1,4 @@
-# MycrUX - E-commerce Platform
+# mycrux.in
 
 A modern full-stack e-commerce platform with Next.js frontend and NestJS backend.
 
@@ -64,19 +64,9 @@ mycrux/
 - **Database:** PostgreSQL
 - **API Communication:** RESTful API with CORS enabled
 
-## Features
-
-- Modern responsive design
-- Contact form with validation
-- Waitlist management
-- Premium membership tiers
-- 3DStructFit technology preview
-- Admin dashboard (backend API ready)
-
 ## Development
 
 Both frontend and backend support hot reloading for development.
-
 For detailed setup instructions, see:
 - [Backend README](./backend/README.md)
 - [Frontend README](./frontend/README.md)
@@ -94,10 +84,3 @@ FRONTEND_URL=http://localhost:3000
 ```
 NEXT_PUBLIC_API_BASE_URL=http://localhost:3001/api/v1
 ```
-
-## Contributing
-
-1. Ensure both backend and frontend are running
-2. Make changes in the appropriate directory
-3. Test your changes
-4. Submit a pull request
