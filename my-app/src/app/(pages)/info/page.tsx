@@ -14,29 +14,29 @@ const Info = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
             <div className="text-center">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-                About mycrux
+                mycrux: beinghomegrown
               </h1>
               <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Discover the story behind India's premium shopping destination. Quality, innovation, and customer satisfaction at its core.
+                An innovative e-commerce platform, 100% developed and designed in India, dedicated to empowering Indian businesses with AI and 3D StructFit technology.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <div className="bg-white text-black px-4 py-2 rounded-full">Premium Quality</div>
-                <div className="bg-white text-black px-4 py-2 rounded-full">Fast Delivery</div>
-                <div className="bg-white text-black px-4 py-2 rounded-full">Easy Returns</div>
-                <div className="bg-white text-black px-4 py-2 rounded-full">24/7 Support</div>
+                <div className="bg-white text-black px-4 py-2 rounded-full">Made in India</div>
+                <div className="bg-white text-black px-4 py-2 rounded-full">AI-Powered</div>
+                <div className="bg-white text-black px-4 py-2 rounded-full">3D StructFit</div>
+                <div className="bg-white text-black px-4 py-2 rounded-full">Direct-to-Customer</div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Our Story Section */}
+        {/* Executive Summary Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-black mb-6">
-              Our Story
+              Executive Summary
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Founded with a vision to revolutionize premium shopping in India, mycrux emerged from the belief that every Indian deserves access to world-class products and exceptional service. We're building more than just an e-commerce platform – we're creating a community of quality-conscious consumers who value authenticity, innovation, and excellence.
+              mycrux is an innovative e-commerce platform, 100% developed and designed in India, dedicated to empowering Indian businesses to sell their products directly to customers. Similar to established online marketplaces, mycrux distinguishes itself by exclusively featuring Indian-made products and integrating cutting-edge Artificial Intelligence (AI) to enhance the customer shopping experience. A key differentiator is the introduction of 3D StructFit, a revolutionary feature allowing users to digitally design their precise body structure, ensuring accurate fashion product recommendations and fit visualization.
             </p>
           </div>
           
@@ -49,13 +49,13 @@ const Info = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-black">Our Mission</h3>
+                  <h3 className="text-2xl font-bold text-black">Direct-to-Customer Marketplace</h3>
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  To democratize premium shopping in India by providing access to high-quality, authentic products with exceptional customer service. We believe that premium shopping should be accessible, trustworthy, and delightful for every Indian consumer.
+                  mycrux provides a streamlined platform for Indian business people to register and sell their products directly to customers. This fosters local entrepreneurship and ensures consumers have access to a wide array of authentic Indian goods.
                 </p>
                 <p className="text-gray-600 text-sm">
-                  Through innovative technology, curated selections, and customer-centric approach, we're setting new standards for online retail in India.
+                  By connecting Indian businesses directly with customers, we eliminate intermediaries and create a more sustainable ecosystem for local commerce.
                 </p>
               </div>
               
@@ -67,13 +67,13 @@ const Info = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-black">Our Vision</h3>
+                  <h3 className="text-2xl font-bold text-black">AI-Powered Fashion Assistance</h3>
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  To become India's most trusted premium shopping destination, where quality meets innovation and every customer experience exceeds expectations. We envision a future where premium shopping is seamless, personalized, and accessible to all.
+                  Our integrated AI system provides personalized assistance for fashion picking. This includes style recommendations that analyze user preferences, browsing history, and current trends to suggest fashion products that align with their individual style.
                 </p>
                 <p className="text-gray-600 text-sm">
-                  By 2030, we aim to serve millions of customers across India with the finest products and the most advanced shopping technology.
+                  Beyond fashion, the AI can also recommend daily care routines tailored to the user's skin type, hair type, and other personal attributes, offering a holistic lifestyle approach.
                 </p>
               </div>
             </div>
@@ -86,42 +86,35 @@ const Info = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-black">Why Choose mycrux?</h3>
+                  <h3 className="text-2xl font-bold text-black">3D StructFit: Personalized Fit Technology</h3>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <span className="text-gray-700 font-medium">Curated selection of premium products</span>
-                      <p className="text-gray-500 text-sm">Handpicked by our expert team</p>
+                      <span className="text-gray-700 font-medium">Accurate Body Representation</span>
+                      <p className="text-gray-500 text-sm">Users can input their exact body shape, size, weight, and other relevant measurements to create a highly accurate digital avatar</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <span className="text-gray-700 font-medium">Fast and reliable delivery across India</span>
-                      <p className="text-gray-500 text-sm">Targeting 2-5 day delivery to 500+ cities</p>
+                      <span className="text-gray-700 font-medium">Virtual Try-On and Fit Visualization</span>
+                      <p className="text-gray-500 text-sm">Based on the user's 3D StructFit model, the platform will visually demonstrate how different fashion products would fit their unique body</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <span className="text-gray-700 font-medium">Exceptional customer service</span>
-                      <p className="text-gray-500 text-sm">24/7 support in multiple languages</p>
+                      <span className="text-gray-700 font-medium">Personalized Product Suggestions</span>
+                      <p className="text-gray-500 text-sm">This feature enables the AI to provide even more precise fashion product recommendations, ensuring suggested items are not only stylish but also a perfect fit</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <span className="text-gray-700 font-medium">Secure and easy payment options</span>
-                      <p className="text-gray-500 text-sm">Multiple payment methods with bank-grade security</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <span className="text-gray-700 font-medium">Hassle-free returns and exchanges</span>
-                      <p className="text-gray-500 text-sm">30-day return policy with free pickup</p>
+                      <span className="text-gray-700 font-medium">Eliminates Guesswork</span>
+                      <p className="text-gray-500 text-sm">Reduces returns and ensures customer satisfaction with accurate fit predictions</p>
                     </div>
                   </div>
                 </div>
@@ -134,36 +127,26 @@ const Info = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-black">Our Values</h3>
+                  <h3 className="text-2xl font-bold text-black">Benefits</h3>
                 </div>
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-white font-bold text-lg">Q</span>
-                    </div>
-                    <p className="font-semibold text-gray-800 mb-1">Quality</p>
-                    <p className="text-gray-500 text-xs">Premium standards</p>
+                <div className="space-y-6">
+                  <div className="border-l-4 border-black pl-4">
+                    <h4 className="font-bold text-gray-800 mb-2">For Sellers</h4>
+                    <ul className="text-sm text-gray-600 space-y-1">
+                      <li>• Direct access to a nationwide customer base</li>
+                      <li>• Reduced overhead costs by bypassing intermediaries</li>
+                      <li>• Promotion of "Made in India" products</li>
+                      <li>• Enhanced brand visibility and reach</li>
+                    </ul>
                   </div>
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-white font-bold text-lg">T</span>
-                    </div>
-                    <p className="font-semibold text-gray-800 mb-1">Trust</p>
-                    <p className="text-gray-500 text-xs">Transparent practices</p>
-                  </div>
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-white font-bold text-lg">I</span>
-                    </div>
-                    <p className="font-semibold text-gray-800 mb-1">Innovation</p>
-                    <p className="text-gray-500 text-xs">Cutting-edge tech</p>
-                  </div>
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-white font-bold text-lg">C</span>
-                    </div>
-                    <p className="font-semibold text-gray-800 mb-1">Care</p>
-                    <p className="text-gray-500 text-xs">Customer-first approach</p>
+                  <div className="border-l-4 border-black pl-4">
+                    <h4 className="font-bold text-gray-800 mb-2">For Customers</h4>
+                    <ul className="text-sm text-gray-600 space-y-1">
+                      <li>• Access to a wide range of authentic Indian products</li>
+                      <li>• Personalized shopping experience with AI assistance</li>
+                      <li>• Accurate fit visualization with 3D StructFit</li>
+                      <li>• Reduced risk of purchasing ill-fitting items</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -315,36 +298,48 @@ const Info = () => {
           </div>
         </div>
 
-        {/* Company Stats Section */}
+        {/* Future Outlook Section */}
+        <div className="bg-gray-50 py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-black mb-6">Future Outlook</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                mycrux aims to become the leading e-commerce platform for Indian products, leveraging technology to create an unparalleled shopping experience. We are committed to continuous innovation, further integrating AI capabilities, and expanding the functionalities of 3D StructFit to offer an even more immersive and personalized customer journey.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Information Section */}
         <div className="bg-black text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">Our Impact</h2>
+              <h2 className="text-4xl font-bold mb-6">Contact Information</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Building the future of premium shopping in India with measurable results and customer satisfaction.
+                For inquiries, please contact our team. We're here to help and answer any questions you may have.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">0</div>
-                <div className="text-gray-300">Cities Served</div>
-                <div className="text-sm text-gray-400 mt-1">Targeting 500+ cities</div>
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-4">Dinesh SriSanth A.</h3>
+                <p className="text-gray-300">Founder & CEO</p>
               </div>
+              
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">0</div>
-                <div className="text-gray-300">Waitlist Members</div>
-                <div className="text-sm text-gray-400 mt-1">About to start</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">24/7</div>
-                <div className="text-gray-300">Customer Support</div>
-                <div className="text-sm text-gray-400 mt-1">Always available</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">100%</div>
-                <div className="text-gray-300">Made in India</div>
-                <div className="text-sm text-gray-400 mt-1">Supporting local</div>
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-4">Email</h3>
+                <p className="text-gray-300">adsrisanth2005@gmail.com</p>
+                <p className="text-gray-300">admin@mycrux.in</p>
               </div>
             </div>
           </div>

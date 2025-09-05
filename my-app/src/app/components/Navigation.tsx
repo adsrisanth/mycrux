@@ -6,7 +6,7 @@ import { useState } from "react";
 import Logo from '../assets/logo.png'
 
 interface NavigationProps {
-  currentPage?: 'home' | 'privacy' | 'terms' | 'contact' | 'waitlist' | 'about' | 'categories' | 'cities';
+  currentPage?: 'home' | 'privacy' | 'terms' | 'contact' | 'waitlist' | 'about' | 'categories';
 }
 
 const Navigation = ({ currentPage = 'home' }: NavigationProps) => {
@@ -37,16 +37,6 @@ const Navigation = ({ currentPage = 'home' }: NavigationProps) => {
               }`}
             >
               About
-            </Link>
-            <Link 
-              href="/cities" 
-              className={`transition-colors duration-300 ${
-                currentPage === 'cities' 
-                  ? 'text-black border-b border-black pb-1 font-semibold' 
-                  : 'text-black hover:text-gray-600'
-              }`}
-            >
-              Cities
             </Link>
             <Link 
               href="/waitlist" 
@@ -100,23 +90,6 @@ const Navigation = ({ currentPage = 'home' }: NavigationProps) => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span>About</span>
-                </span>
-              </Link>
-              <Link 
-                href="/cities" 
-                className={`px-4 py-3 rounded-lg transition-all duration-300 ${
-                  currentPage === 'cities' 
-                    ? 'text-black border-l-4 border-black bg-gray-50 font-medium' 
-                    : 'text-black hover:text-gray-600 hover:bg-gray-50'
-                }`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <span className="flex items-center space-x-3">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span>Cities</span>
                 </span>
               </Link>
               <div className="pt-4 border-t border-gray-200 mt-4">
