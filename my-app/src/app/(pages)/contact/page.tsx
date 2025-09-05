@@ -13,7 +13,7 @@ const Contact = () => {
     firstName: '',
     lastName: '',
     email: '',
-    subject: '',
+    subject: 'general',
     message: ''
   });
   

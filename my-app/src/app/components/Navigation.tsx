@@ -6,7 +6,7 @@ import { useState } from "react";
 import Logo from '../assets/logo.png'
 
 interface NavigationProps {
-  currentPage?: 'home' | 'privacy' | 'terms' | 'contact' | 'waitlist' | 'about' | 'categories';
+  currentPage?: 'home' | 'privacy' | 'terms' | 'contact' | 'waitlist' | 'about' | 'categories' | 'cities';
 }
 
 const Navigation = ({ currentPage = 'home' }: NavigationProps) => {
