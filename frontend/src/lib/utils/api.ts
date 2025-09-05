@@ -1,13 +1,14 @@
-import { ContactFormRequest, ContactFormResponse } from '@/lib/models/Contact';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3001/api/v1';
 
-export async function submitContactForm(data: ContactFormRequest): Promise<ContactFormResponse> {
+export async function submitContactForm(data: any): Promise<any> {
   try {
-    const response = await fetch('/api/support', {
+    const response = await fetch(`${API_BASE_URL}/contacts`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
+      credentials: 'include',
     });
 
     const result = await response.json();
@@ -22,7 +23,7 @@ export async function submitContactForm(data: ContactFormRequest): Promise<Conta
     return {
       success: true,
       message: result.message,
-      id: result.id
+      id: result.data.id
     };
   } catch (error) {
     console.error('Error submitting contact form:', error);

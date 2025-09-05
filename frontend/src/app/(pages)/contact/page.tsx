@@ -5,11 +5,9 @@ import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import { validateContactForm } from '@/lib/utils/validation';
 import { submitContactForm } from '@/lib/utils/api';
-import { ContactFormRequest } from '@/lib/models/Contact';
-
 
 const Contact = () => {
-  const [formData, setFormData] = useState<ContactFormRequest>({
+  const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
